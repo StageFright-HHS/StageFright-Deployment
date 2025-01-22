@@ -9,4 +9,4 @@ The "StageFright" project is a fully functional, modern, and visually engaging w
 
 Our website showcases responsive design, accessibility, and dynamic features to engage users while meeting BPA's Web Design competition criteria.
 
-https://stagefright-hhs.github.io/StageFright-Deployment/index.html
+[https://stagefright-hhs.github.io/BPA2025/
