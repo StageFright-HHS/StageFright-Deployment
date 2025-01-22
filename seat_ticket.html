@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="reserve.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="pizza.ico" />
+    <title>Reservations</title>
+  </head>
+
+  <body>
+    <div class="nav">
+      <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHvZb53-EjwMt5EOWr2g-QOdtFgtLUXuejoA&s" alt="Logo">
+     -->
+
+      <!-- <h1>Stage Fright</h1> -->
+
+      <img
+        src="https://img.freepik.com/premium-photo/skeleton-with-long-hair-guitar-middle-picture_1273080-641.jpg"
+        alt="logo"
+      />
+
+      <ul>
+        <a href="index.html">HOME</a>
+
+        <a href="seat_ticket.html">BOOKING</a>
+
+        <a href="index.html#about">ABOUT US</a>
+
+        <a href="index.html#contact">CONTACT</a>
+
+        <a href="special_events.html">TOUR DATES</a>
+
+        <div class="dropdown">
+          <a href="order.html" class="cta">MERCH</a>
+
+          <div class="dropdownContent">
+            <a href="order.html#original">Shirts</a>
+            <a href="order.html#big">Sweatshirts</a>
+            <a href="order.html#somethingDifferent">Hoodies</a>
+            <a href="order.html#other">Jackets</a>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <section class="landing" id="landing">
+      <div class="hero">
+        <h1>Booking</h1>
+      </div>
+    </section>
+
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/026/119/120/non_2x/call-button-icon-in-line-style-design-isolated-on-white-background-editable-stroke-vector.jpg"
+      alt="call-button"
+      id="call-button"
+    />
+
+    <script>
+      const callButton = document.getElementById("call-button");
+
+      callButton.addEventListener("click", () => {
+        const phoneNumber = "+5125557890";
+        window.location.href = `tel:${phoneNumber}`;
+      });
+    </script>
+
+    <h1>Available Seating</h1>
+
+    <section class="body-container">
+      <div class="movie-container">
+        <label>Pick a location:</label>
+        <select id="movie">
+          <option value="120">Austin ($120)</option>
+          <option value="115">Detroit ($115)</option>
+          <option value="110">Portland ($110)</option>
+          <option value="135">Chicago ($135)</option>
+        </select>
+      </div>
+
+      <ul class="showcase">
+        <li>
+          <div class="seat"></div>
+          <small>N/A</small>
+        </li>
+
+        <li>
+          <div class="seat selected"></div>
+          <small>Selected</small>
+        </li>
+
+        <li>
+          <div class="seat occupied"></div>
+          <small>Occupied</small>
+        </li>
+      </ul>
+
+      <div class="container">
+        <div class="screen"></div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+        </div>
+
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat occupied"></div>
+          <div class="seat"></div>
+        </div>
+      </div>
+
+      <p class="text">
+        You have selected <span id="count">0</span> seats for a price of $<span
+          id="total"
+          >0</span
+        >
+      </p>
+    </section>
+
+    <section class="purchase">
+      <a href="recieved.html">PURCHASE TICKET(S)</a>
+    </section>
+
+    <script>
+      const container = document.querySelector(".container");
+      const seats = document.querySelectorAll(".row .seat:not(.occupied");
+      const count = document.getElementById("count");
+      const total = document.getElementById("total");
+      const movieSelect = document.getElementById("movie");
+
+      populateUI();
+      let ticketPrice = +movieSelect.value;
+
+      // Save selected movie index and price
+      function setMovieData(movieIndex, moviePrice) {
+        localStorage.setItem("selectedMovieIndex", movieIndex);
+        localStorage.setItem("selectedMoviePrice", moviePrice);
+      }
+
+      // update total and count
+      function updateSelectedCount() {
+        const selectedSeats = document.querySelectorAll(".row .seat.selected");
+
+        const seatsIndex = [...selectedSeats].map((seat) =>
+          [...seats].indexOf(seat)
+        );
+
+        localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
+
+        //copy selected seats into arr
+        // map through array
+        //return new array of indexes
+
+        const selectedSeatsCount = selectedSeats.length;
+
+        count.innerText = selectedSeatsCount;
+        total.innerText = selectedSeatsCount * ticketPrice;
+      }
+
+      // get data from localstorage and populate ui
+      function populateUI() {
+        const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
+        if (selectedSeats !== null && selectedSeats.length > 0) {
+          seats.forEach((seat, index) => {
+            if (selectedSeats.indexOf(index) > -1) {
+              seat.classList.add("selected");
+            }
+          });
+        }
+
+        const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");
+
+        if (selectedMovieIndex !== null) {
+          movieSelect.selectedIndex = selectedMovieIndex;
+        }
+      }
+
+      // Movie select event
+      movieSelect.addEventListener("change", (e) => {
+        ticketPrice = +e.target.value;
+        setMovieData(e.target.selectedIndex, e.target.value);
+        updateSelectedCount();
+      });
+
+      // Seat click event
+      container.addEventListener("click", (e) => {
+        if (
+          e.target.classList.contains("seat") &&
+          !e.target.classList.contains("occupied")
+        ) {
+          e.target.classList.toggle("selected");
+
+          updateSelectedCount();
+        }
+      });
+
+      // intial count and total
+      updateSelectedCount();
+    </script>
+
+    <section class="footer">
+      <div class="column title">
+        <h2>Stage <span class="accent">Fright</span></h2>
+
+        <p>
+          Hendrickson High School Pflugerville Chapter by Advait Mannepalli,
+          Jawaad Merali, Saamiya Merali, Giovanni Haddad.
+        </p>
+        <p>
+          Theme is Stage Fright Band. Hendrickson High School, Pflugerville,
+          Texas (2024-2025)
+        </p>
+
+        <div class="socialMedia">
+          <ion-icon name="logo-twitter"></ion-icon>
+
+          <ion-icon name="logo-facebook"></ion-icon>
+
+          <ion-icon name="logo-youtube"></ion-icon>
+
+          <ion-icon name="logo-instagram"></ion-icon>
+        </div>
+      </div>
+
+      <div class="column home">
+        <h3>HOME</h3>
+
+        <a href="index.html#about">ABOUT US</a>
+
+        <a href="index.html#about">Why us</a>
+
+        <a href="index.html#contact">Contact us</a>
+      </div>
+
+      <div class="column order">
+        <h3>MERCH</h3>
+
+        <a href="order.html#original">Shirts</a>
+
+        <a href="order.html#big">Sweatshirts</a>
+
+        <a href="order.html#somethingDifferent">Chains</a>
+
+        <a href="order.html#other">Posters</a>
+      </div>
+
+      <div class="column businessHours">
+        <h3>UPCOMING TOUR AREAS</h3>
+
+        <p>Austin, Texas</p>
+
+        <p>Los Angeles, California</p>
+
+        <p>Sedona, Arizona</p>
+      </div>
+
+      <div class="column info">
+        <h3 class="phoneNumber">PHONE NUMBER</h3>
+
+        <p>+1 512-555-7890</p>
+      </div>
+    </section>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
