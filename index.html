@@ -12,9 +12,7 @@
 <body>
 
   <div class="nav">
-    <a href="https://github.com/StageFright-HHS/BPA2025">
-      <img src="https://img.freepik.com/premium-photo/skeleton-with-long-hair-guitar-middle-picture_1273080-641.jpg" alt="logo">
-    </a>
+    <img class="logo" src="https://img.freepik.com/premium-photo/skeleton-with-long-hair-guitar-middle-picture_1273080-641.jpg" alt="logo">
 
     <ul>
       <a onclick="document.getElementById('landing').scrollIntoView();">HOME</a>
@@ -38,7 +36,29 @@
         </div>
       </div>
     </ul>
+
+
+    <!-- mobile nav bar -->
+    <span class="hamburger">☰</span>
+    <ul class="active">
+      <li><a onclick="document.getElementById('landing').scrollIntoView();">HOME</a></li>
+      <li><a href="seat_ticket.html">BOOKING</a></li>
+      <li><a onclick="document.getElementById('about').scrollIntoView();">ABOUT</a></li>
+      <li><a onclick="document.getElementById('contact').scrollIntoView();">CONTACT</a></li>
+      <li><a href="special_events.html">TOUR DATES</a></li>
+      <li><a href="order.html">MERCH</a></li>
+    </ul>
   </div>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav ul');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+  </script>
 
   <section class="landing" id="landing">
     <div class="hero">
@@ -284,9 +304,9 @@
           <input placeholder="Phone number">
 
           <div class="container">
-            <input placeholder="Booking Date &" class="date">
+            <input placeholder="Booking Date &" class="date" class="date">
 
-            <input placeholder="Time" class="time">
+            <input placeholder="Time" class="time" class="time">
           </div>
 
           <button><a href="seat_ticket.html">RESERVE TICKET</a></button>
