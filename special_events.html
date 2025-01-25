@@ -10,12 +10,7 @@
 
   <body>
     <div class="nav">
-      <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHvZb53-EjwMt5EOWr2g-QOdtFgtLUXuejoA&s" alt="Logo">
-     -->
-
-      <!-- <h1>Stage Fright</h1> -->
-
-      <img
+      <img class="logo"
         src="https://img.freepik.com/premium-photo/skeleton-with-long-hair-guitar-middle-picture_1273080-641.jpg"
         alt="logo"
       />
@@ -27,9 +22,7 @@
 
         <a href="index.html#about">ABOUT US</a>
 
-        <a href="index.html#contact""
-          >CONTACT</a
-        >
+        <a href="index.html#contact">CONTACT</a>
 
         <a href="special_events.html">TOUR DATES</a>
 
@@ -44,7 +37,27 @@
           </div>
         </div>
       </ul>
+
+      <span class="hamburger">☰</span>
+      <ul class="active">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="seat_ticket.html">BOOKING</a></li>
+        <li><a href="index.html#about">ABOUT</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+        <li><a href="special_events.html">TOUR DATES</a></li>
+        <li><a href="order.html">MERCH</a></li>
+      </ul>
     </div>
+    
+      <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav ul');
+    
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+      </script>
 
     <section class="landing" id="landing">
       <div class="hero">
@@ -61,14 +74,14 @@
       </div> -->
       </div>
 
-          <img src="https://static.vecteezy.com/system/resources/previews/026/119/120/non_2x/call-button-icon-in-line-style-design-isolated-on-white-background-editable-stroke-vector.jpg" alt="call-button" id="call-button">
+    <img src="https://static.vecteezy.com/system/resources/previews/026/119/120/non_2x/call-button-icon-in-line-style-design-isolated-on-white-background-editable-stroke-vector.jpg" alt="call-button" id="call-button">
     
 
     <script>
       const callButton = document.getElementById('call-button');
 
       callButton.addEventListener('click', () => {
-        const phoneNumber = '+5125557890';
+        const phoneNumber = '+1 512-555-7890';
         window.location.href = `tel:${phoneNumber}`;
       });
     </script>
@@ -89,7 +102,7 @@
             Stage Fright kicks off their tour in Texas, delivering a fiery set in the live music capital of the world.
           </p>
 
-          <p class="price"><p class="price">Friday, March 1, 2024 | 7:00 PM</p>
+          <p class="price">Friday, March 1, 2024 | 7:00 PM</p>
           <p class="price">Emo’s Austin, 2015 E Riverside Dr</p>
         </div>
 
@@ -106,7 +119,7 @@
             The band’s raw industrial sound will bring Motor City’s iconic venue to life.
           </p>
 
-          <p class="price"><p class="price">Monday, March 4, 2024 | 7:30 PM</p>
+          <p class="price">Monday, March 4, 2024 | 7:30 PM</p>
           <p class="price">Saint Andrew's Hall, 431 E Congress St</p>
         </div>
 
@@ -123,7 +136,7 @@
             Stage Fright brings heavy riffs and energy to Portland's underground scene.
           </p>
 
-          <p class="price"><p class="price">Thursday, March 7, 2024 | 8:00</p>
+          <p class="price">Thursday, March 7, 2024 | 8:00</p>
           <p class="price">Hawthorne Theatre, 1507 SE César E. Chávez Blvd</p>
         </div>
 
@@ -140,7 +153,7 @@
             Prepare for a high-energy metal storm in Chicago’s legendary House of Blues.
           </p>
 
-          <p class="price"><p class="price">Saturday, March 9, 2024 | 7:00 PM</p>
+          <p class="price">Saturday, March 9, 2024 | 7:00 PM</p>
           <p class="price">House of Blues Chicago, 329 N Dearborn St</p>
         </div>
       </div>
@@ -159,7 +172,7 @@
             The desert heat meets Stage Fright’s molten metal performance in Phoenix.
           </p>
 
-          <p class="price"><p class="price">Tuesday, March 12, 2024 | 7:30 PM</p>
+          <p class="price">Tuesday, March 12, 2024 | 7:30 PM</p>
           <p class="price">The Van Buren, 401 W Van Buren St</p>
         </div>
 
@@ -176,7 +189,7 @@
             Seattle’s grunge history will collide with Stage Fright’s heavy metal force.
           </p>
 
-          <p class="price"><p class="price">Friday, March 15, 2024 | 8:00 PM</p>
+          <p class="price">Friday, March 15, 2024 | 8:00 PM</p>
           <p class="price">The Showbox, 1426 1st Ave</p>
         </div>
 
@@ -193,7 +206,7 @@
             The band closes their tour in Music City with a night of unforgettable metal energy.
           </p>
 
-          <p class="price"><p class="price">Sunday, March 17, 2024 | 7:30 PM</p>
+          <p class="price">Sunday, March 17, 2024 | 7:30 PM</p>
           <p class="price">Exit/In, 2208 Elliston Pl</p>
         </div>
 
@@ -205,7 +218,7 @@
   
         
         <p> Hendrickson High School Pflugerville Chapter by Advait Mannepalli, Jawaad Merali, Saamiya Merali, Giovanni Haddad. </p>
-          <p>Theme is Stage Fright Band. Hendrickson High School, Pflugerville, Texas (2024-2025)</p>
+        <p>Theme is Stage Fright Band. Hendrickson High School, Pflugerville, Texas (2024-2025)</p>
   
         <div class="socialMedia">
           <ion-icon name="logo-twitter"></ion-icon>

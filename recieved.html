@@ -11,12 +11,8 @@
 
   <body>
     <div class="nav">
-      <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHvZb53-EjwMt5EOWr2g-QOdtFgtLUXuejoA&s" alt="Logo">
-     -->
-
-      <!-- <h1>Stage Fright</h1> -->
-
       <img
+        class="logo"
         src="https://img.freepik.com/premium-photo/skeleton-with-long-hair-guitar-middle-picture_1273080-641.jpg"
         alt="logo"
       />
@@ -28,9 +24,7 @@
 
         <a href="index.html#about">ABOUT US</a>
 
-        <a href="index.html#contact""
-          >CONTACT</a
-        >
+        <a href="index.html#contact">CONTACT</a>
 
         <a href="special_events.html">TOUR DATES</a>
 
@@ -45,7 +39,27 @@
           </div>
         </div>
       </ul>
+
+      <span class="hamburger">☰</span>
+      <ul class="active">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="seat_ticket.html">BOOKING</a></li>
+        <li><a href="index.html#about">ABOUT</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+        <li><a href="special_events.html">TOUR DATES</a></li>
+        <li><a href="order.html">MERCH</a></li>
+      </ul>
     </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav ul");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+    </script>
 
     <section class="landing" id="landing">
       <div class="hero">
@@ -71,14 +85,17 @@
       <!-- <img class="downlink" src="https://i.pinimg.com/1200x/dc/39/81/dc398179aadbcce3c6eda958a942a274.jpg" alt="heart"> -->
     </section>
 
-        <img src="https://static.vecteezy.com/system/resources/previews/026/119/120/non_2x/call-button-icon-in-line-style-design-isolated-on-white-background-editable-stroke-vector.jpg" alt="call-button" id="call-button">
-    
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/026/119/120/non_2x/call-button-icon-in-line-style-design-isolated-on-white-background-editable-stroke-vector.jpg"
+      alt="call-button"
+      id="call-button"
+    />
 
     <script>
-      const callButton = document.getElementById('call-button');
+      const callButton = document.getElementById("call-button");
 
-      callButton.addEventListener('click', () => {
-        const phoneNumber = '+5125557890';
+      callButton.addEventListener("click", () => {
+        const phoneNumber = "+5125557890";
         window.location.href = `tel:${phoneNumber}`;
       });
     </script>
@@ -144,8 +161,8 @@
         <h2>Stage <span class="accent">Fright</span></h2>
 
         <p>
-          Hendrickson High School Pflugerville Chapter by Advait Mannepalli, Jawaad Merali, Saamiya
-          Merali, Giovanni Haddad.
+          Hendrickson High School Pflugerville Chapter by Advait Mannepalli,
+          Jawaad Merali, Saamiya Merali, Giovanni Haddad.
         </p>
         <p>
           Theme is Stage Fright Band. Hendrickson High School, Pflugerville,
@@ -201,7 +218,13 @@
         <p>+1 512-555-7890</p>
       </div>
     </section>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
