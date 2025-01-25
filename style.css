@@ -1124,10 +1124,16 @@ label {
   .landing .hero {
     height: 40%;
     background-size: cover;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
   }
 
   .landing .hero h1 {
     font-size: 75px;
+    text-shadow: none;
+    /* border: 1px solid white; */
   }
 
   .pizzas {
@@ -1244,5 +1250,11 @@ label {
     display: none;
     visibility: hidden;
     position: absolute;    
+  }
+
+  .about {
+    margin: 10px 0;
+    padding: 0 30px;
+    width: 100%;
   }
 }
