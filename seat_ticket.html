@@ -188,10 +188,28 @@
       </p>
     </section>
 
-    <section class="purchase">
-      <a href="recieved.html">PURCHASE TICKET(S)</a>
-    </section>
-
+    <section class="contact">
+      <div class="container">
+        <div class="book">
+          <div class="card book">
+  
+            <h3>BOOK A TICKET</h3>
+  
+            <input placeholder="Name">
+  
+            <input placeholder="Email">
+  
+            <input placeholder="Phone number">
+  
+            <div class="container">
+              <input placeholder="Booking Date &" class="date" class="date">
+  
+              <input placeholder="Time" class="time" class="time">
+            </div>
+            <a href="recieved.html"><button id="submit" class="booking-button" onclick="change()">Purchase</button></a>
+          </div>
+        </div>
+      </div>
     <script>
       const container = document.querySelector(".container");
       const seats = document.querySelectorAll(".row .seat:not(.occupied");

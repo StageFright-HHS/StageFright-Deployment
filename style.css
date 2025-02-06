@@ -110,6 +110,7 @@ button {
   font-family:"Franklin Gothic Medium", sans-serif;
   letter-spacing: normal;
   margin-top: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
   text-shadow: none;
   font-weight: 700;
@@ -719,6 +720,23 @@ button:active {
   border: none;
   border-bottom: 2px solid var(--primary-text-color);
   width: 300px;
+  height: 30px;
+  background-color: transparent;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--primary-text-color);
+  padding: 20px;
+  padding-left: 10px;
+  transition-duration: 0.3s;
+  box-shadow: 0 0 8px 2px inset rgba(0 0 0 / 50%);
+}
+
+.contact .container .card.book textarea {
+  border-radius: 2px;
+  border: none;
+  border-bottom: 2px solid var(--primary-text-color);
+  width: 90%;
   height: 30px;
   background-color: transparent;
   font-family: "Rajdhani", sans-serif;

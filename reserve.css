@@ -240,10 +240,29 @@ button {
   justify-content: center;
 }
 
+.booking-button {
+  /* background-color: transparent; */
+  /* border: 2px dashed var(--accent-color); */
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+  font-size: 25px;
+  width: 200px;
+  height: auto;
+  font-family:"Franklin Gothic Medium", sans-serif;
+  letter-spacing: normal;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-shadow: none;
+  font-weight: 700;
+  padding: 10px 20px;
+  /* transition: background 0.3s, color 0.3s, transform 0.1s; */
+}
+
 button:hover {
   background: var(--accent-color);
   color: var(--primary-text-color);
-  /* box-shadow: 0 0 10px 0 var(--accent-color); */
+  box-shadow: 0 0 10px 0 var(--accent-color);
 }
 
 button:active {
@@ -716,7 +735,7 @@ button:active {
   /* box-shadow: 0px 0 20px 0px rgba(0, 0, 0, 0.5); */
   box-shadow: 0px 1px 10px 10px rgb(0, 0, 0, 0.6);
   width: 400px;
-  height: 670px;
+  height: auto;
   /* padding: 20px; */
   display: flex;
   flex-direction: column;
@@ -724,6 +743,7 @@ button:active {
 }
 
 .contact .container .card h3 {
+  margin-top: 20px;
   border-radius: 2px;
   padding: 15px;
   background-color: var(--primary-color);
@@ -1114,6 +1134,24 @@ label {
 }
 
 @media (max-width: 786px) {
+  .screen {
+    background-color: #fff;
+    height: 70px;
+    width: 400px;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
+  }
+
+  .seat {
+    background-color: #444451;
+    height: 25px;
+    width: 35px;
+    margin: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
   html, body {
     font-size: 14px;
   }

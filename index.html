@@ -303,16 +303,28 @@
 
           <input placeholder="Phone number">
 
-          <div class="container">
+          <label for="messsage">Message: </label>
+
+          <textarea id="message" name="message" placeholder="Message"></textarea>
+
+          <!-- <div class="container">
             <input placeholder="Booking Date &" class="date" class="date">
 
             <input placeholder="Time" class="time" class="time">
-          </div>
+          </div> -->
 
-          <button class="booking-button"><a href="seat_ticket.html">Reserve Seat</a></button>
+          <button id="submit" class="booking-button" onclick="change()">Send</button>
         </div>
       </div>
     </div>
+
+    <script>
+      function change()
+      {
+        var elem = document.getElementById("submit");
+        elem.innerHTML = "Sent!";
+      }
+    </script>
 
     <div class="contactInfo">
       <p><span class="accent"></p>
