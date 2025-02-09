@@ -1137,6 +1137,7 @@ label {
   .screen {
     background-color: #fff;
     height: 70px;
+    width: 400px;
     margin: 15px 0;
     transform: rotateX(-45deg);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
